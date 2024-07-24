@@ -11,5 +11,5 @@ supported_apps = ["ZumiMini-1.21"]
 chipsets = ["ESP32-S3"]
 
 # Binary file paths and offsets for each chipset
-image.esp32-s3 = "Zumini_main_merge_1.21"
+image.esp32-s3 = "Zumini_main_merge"
 
