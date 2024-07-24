@@ -88,7 +88,7 @@ var isDefault = true;
 // Build the Quick Try UI using the config toml file. If external path is not specified, pick up the default config
 async function buildQuickTryUI() {
     const urlParams = new URLSearchParams(window.location.search);
-    var tomlFileURL = window.location.origin + window.location.pathname + "config/rainmaker_config.toml"; // defaulting to rainmaker for now.
+    var tomlFileURL = window.location.origin + window.location.pathname + "config/zumi_mini_master_launch.toml"; // defaulting to rainmaker for now.
     var solution = urlParams.get("solution");
     if (solution){
         if (solution.toLowerCase() == "matter")
