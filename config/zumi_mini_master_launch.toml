@@ -4,9 +4,9 @@ esp_toml_version = 1.0
 firmware_images_url = "https://truedo.github.io/esp-launchpad/firmware/"
 
 # List of supported apps
-supported_apps = ["ZumiMini-1.21"]
+supported_apps = ["ZumiMini"]
 
-[ZumiMini-1.21]
+[ZumiMini]
 # Supported chipsets
 chipsets = ["ESP32-S3"]
 
