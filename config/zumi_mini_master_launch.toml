@@ -1,15 +1,11 @@
 esp_toml_version = 1.0
 
-# URL to your firmware images directory
 firmware_images_url = "https://truedo.github.io/esp-launchpad/firmware/"
 
-# List of supported apps
-supported_apps = ["ZumiMini"]
+supported_apps = ["ZumiMini_1_21"]
 
-[ZumiMini]
-# Supported chipsets
+[ZumiMini_1_21]
 chipsets = ["ESP32-S3"]
+image.esp32-s3 = "Zumini_main_merge_1_21"
 
-# Binary file paths and offsets for each chipset
-image.esp32-s3 = "Zumini_main_merge"
 
