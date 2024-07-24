@@ -96,7 +96,7 @@ async function buildQuickTryUI() {
             tomlFileURL = "https://espressif.github.io/esp-matter/launchpad.toml";
         else if(solution.toLowerCase() == "rainmaker")
             // use the one bundled in the config
-            tomlFileURL = window.location.origin + window.location.pathname + "config/zumi_mini_master_launch.toml";
+            tomlFileURL = window.location.origin + window.location.pathname + "config/rainmaker_config.toml";
     }
     else {
         var externalURL = urlParams.get('flashConfigURL');
