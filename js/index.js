@@ -41,6 +41,10 @@ const developKitsContainer = document.getElementById("developKitsContainer");
 const appInfoTriggerContainer = document.getElementById("appInfoTriggerContainer");
 const rightOffCanvasContainer = document.getElementById("offcanvasRight");
 
+const testButton = document.getElementById("testButton");
+
+
+
 let resizeTimeout = false;
 
 import * as utilities from "./utils.js";
