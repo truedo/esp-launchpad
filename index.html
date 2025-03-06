@@ -13,6 +13,12 @@
         <link href="css/custom.css" rel="stylesheet" />
         <link href="css/xterm.css" rel="stylesheet" />
         <link href="minimal-launchpad/minimal_ui_styles.css" rel="stylesheet" />
+        <style>            
+            .highlight {
+                color: red; /* 강조할 색상 선택 */
+                font-weight: bold; /* 강조를 위해 굵게 표시 */
+            }            
+        </style>
     </head>
     <body class="d-flex flex-column h-100">
          <!-- Modal for flashiing status-->
@@ -26,12 +32,12 @@
                 <div class="modal-content">
                   <div class="modal-header">
                     <img src="./assets/esp-logo.png" width="42" height="42" style="vertical-align:middle"></img>&emsp;
-                    <h4 class="modal-title"><span style="color: #17a2b8;"> ESP Firmware Flashing Status </span></h4>
+                    <h4 class="modal-title"><span style="color: #17a2b8;"> 주미 미니 펌웨어 입력 상태 </span></h4>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="closeFlashComplete"></button>
                   </div>
                   <div class="modal-body" id="preview_body">
-                    <div><p>Flashing of firmware is completed! Click the <b>'Reset Device'</b> button on the Console Tab to reset your device with the new flashed firnware.
-                      <br><br>
+                    <div><p>펌웨어 입력이 완료되었습니다. <b>'Reset Device'</b> 버튼을 클릭하면 새로운 펌웨어로 작동합니다. 또는 케이블을 제거하고 다시 켜세요.
+                        <br><br>
                       <span id="appDownloadLink"></span>
                       <br /><br />
                       <span id="setupPayloadInfoText"></span>
@@ -54,7 +60,7 @@
                     </div>
                   </div>
                   <div class="modal-footer">
-                    <button class="app-button btn btn-outline-dark" type="button" id="done" data-bs-dismiss="modal">Done</button>
+                    <button class="app-button btn btn-outline-dark" type="button" id="done" data-bs-dismiss="modal">완료</button>
                   </div>
                 </div>
               </div>
@@ -73,12 +79,12 @@
                 <div class="modal-content">
                   <div class="modal-header">
                     <img src="./assets/esp-logo.png" width="42" height="42" style="vertical-align:middle"></img>&emsp;
-                    <h4 class="modal-title"><span style="color: #17a2b8;"> ESP Reset Device Confirmation </span></h4>
+                    <h4 class="modal-title"><span style="color: #17a2b8;"> 주미 미니 리셋 확인 </span></h4>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="closeResetModal"></button>
                   </div>
                   <div class="modal-body" id="preview_body">
                     <div id="resetMessage">
-                        <p>This will reset your device. Click on 'Confirm' to continue.</p>
+                        <p>이제 주미 미니가 다시 시작됩니다. 'Confirm' 버튼을 클릭하세요.</p>
                         <button class="app-button btn btn-outline-dark" type="button" id="resetButton" data-toggle="tooltip"
                         data-placement="right" title="Confirm to Reset your device">Confirm</button>
                         <div><br></div>
@@ -157,9 +163,17 @@
             <div class="text-center mt-3 intro-text">
                 <div class="alert alert-warning alert-dismissible fade show" role="alert">
                     <label style="display:none" id="lblConnTo"><b>Connected to device: </b></label>
-                    <p><span>ESP Launchpad helps you to flash the selected firmware image onto your device.</span>
-                    <br /><span id="ensureConnect"> Ensure you have connected your device to the serial USB port. Click on the 'Connect' button in the top menu option, to connect to your attached device.
-                        Note : Once you flash your device, any earlier firmware would be overwritten.</span>
+                    
+                    <p><span>이곳에서 주미 미니의 펌웨어를 업데이트할 수 있습니다. </span>
+                        <br /><span id="ensureConnect"> 현재는 테스트 버전으로 1.21버전으로만 업데이트가 가능합니다. </span>
+                        <br />
+                        <br /><span> 1) 주미 미니에 USB 케이블을 연결하세요. 그리고 <span class="highlight">윈도우에서 드라이버가 완전히 설치 될때까지 기다려주세요.(자동 설치) </span></span>
+                        <br /><span> 2) 위의 메뉴에서 'Connect' 아이콘을 선택합니다. 그리고 포트를 선택해서 연결합니다. </span>
+                        <br /><span> 3) 아래 메뉴에서 'flash' 버튼을 클릭합니다. <span class="highlight">!!완료가 될 때까지 절대로 중간에 멈추거나 연결을 끊으면 안됩니다!!</span> </span>
+                        <br />
+                        <br /><span> *1.21로 업데이트 할때 추가적으로 SD카드의 내용도 업데이트 해주어야 합니다. </span>
+                        <br /><span><a href="https://drive.google.com/file/d/1_5F-qiR_8jPlEzqxtEA_-ouIJAiNZxRI/view?usp=drive_link" target="_blank">여기서</a> 파일을 다운받아 압축을 풀어서, 주미 미니의 SD카드 내용에 덮어써주세요. </span>  
+
                     </p>
 
                 </div>
@@ -168,20 +182,20 @@
 
         <!-- Quick start tab content - start -->
         <div class="container tabs-section main-page-tab-panel" data-tab-panel-id="quickstart">
-            <h5 class="pt-4 pb-2 lh-lg"><span id="qtLabel">Choose from some of ESP's pre-built, out-of-the-box examples to flash and play</span></h5>
+            <h5 class="pt-4 pb-2 lh-lg"><span id="qtLabel">주미 미니의 펌웨어를 선택해주세요. (연결이 먼저 필요합니다.)</span></h5>
             <div class="form">
                 <div class="d-flex justify-content-between flex-wrap form-config-info-container-wrapper">
                     <div class="form-container">
                         <div class="field-container">
                             <label>
-                                Select Application
+                                주미 미니 버전 선택
                             </label>
                             <div class="field">
                                 <select name="device" id="device">
                                 </select>
                             </div>
                         </div>
-                        <div class="field-container">
+                        <div class="field-containerid"  id ="chipTypeContainer" style="display: none">
                             <label>
                                 ESP Chipset Type
                             </label>
