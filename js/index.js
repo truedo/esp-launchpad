@@ -952,10 +952,10 @@ classChangeObserver.observe(rightOffCanvasContainer, {
     attributes: true
 })
 
-testButton.onclick = async () => {
-    if(!connected)
-        await connectToDevice();
+// testButton.onclick = async () => {
+//     if(!connected)
+//         await connectToDevice();
 
-    postConnectControls();
+//     postConnectControls();
 
-}
+// }
