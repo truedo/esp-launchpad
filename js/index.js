@@ -41,7 +41,7 @@ const developKitsContainer = document.getElementById("developKitsContainer");
 const appInfoTriggerContainer = document.getElementById("appInfoTriggerContainer");
 const rightOffCanvasContainer = document.getElementById("offcanvasRight");
 
-const testButton = document.getElementById("testButton");
+//const testButton = document.getElementById("testButton");
 
 
 
