@@ -41,7 +41,7 @@ const developKitsContainer = document.getElementById("developKitsContainer");
 const appInfoTriggerContainer = document.getElementById("appInfoTriggerContainer");
 const rightOffCanvasContainer = document.getElementById("offcanvasRight");
 
-//const testButton = document.getElementById("testButton");
+const testButton = document.getElementById("testButton");
 
 
 
@@ -952,10 +952,10 @@ classChangeObserver.observe(rightOffCanvasContainer, {
     attributes: true
 })
 
-// testButton.onclick = async () => {
-//     if(!connected)
-//         await connectToDevice();
+testButton.onclick = async () => {
+    if(!connected)
+        await connectToDevice();
 
-//     postConnectControls();
+    postConnectControls();
 
-// }
+}
