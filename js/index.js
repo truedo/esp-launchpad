@@ -951,3 +951,11 @@ const classChangeObserver = new MutationObserver(mutationObserverCallback)
 classChangeObserver.observe(rightOffCanvasContainer, {
     attributes: true
 })
+
+testButton.onclick = async () => {
+    if(!connected)
+        await connectToDevice();
+
+    postConnectControls();
+
+}
